@@ -39,6 +39,9 @@ function Level(plan) {
       else if (ch == "!")
         fieldType = "lava";
 
+      else if (ch == "y")
+          fieldType = "floater";
+
       // "Push" the fieldType, which is a string, onto the gridLine array (at the end).
       gridLine.push(fieldType);
     }
@@ -256,14 +259,14 @@ Coin.prototype.act = function(step) {
 };
 //power wobble
 Power.prototype.act = function(step) {
-  this.wobble += step * wobbleSpeed * 2;
-  var wobblePos = Math.sin(this.wobble) * wobbleDist * 5;
+  this.wobble += step * wobbleSpeed * 1;
+  var wobblePos = Math.sin(this.wobble) * wobbleDist * 4;
   this.pos = this.basePos.plus(new Vector(0, wobblePos));
 };
 
 var maxStep = 0.05;
 
-var playerXSpeed = 7;
+var playerXSpeed = 6;
 
 Player.prototype.moveX = function(step, level, keys) {
   this.speed.x = 0;
@@ -282,7 +285,7 @@ Player.prototype.moveX = function(step, level, keys) {
 };
 
 var gravity = 30;
-var jumpSpeed = 17;
+var jumpSpeed = 19;
 
 Player.prototype.moveY = function(step, level, keys) {
   // Accelerate player downward (always)
