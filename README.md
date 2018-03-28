@@ -1,1 +1,2 @@
-# Laby-7---Collecting-Coins
+# JSPlatformer
+JS Platformer for DIG 3480C
